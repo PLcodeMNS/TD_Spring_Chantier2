@@ -14,6 +14,6 @@ public class Consommable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
 
-    @Column(nullable = false)
+    @Column(name = "name", nullable = false)
     protected String name;
 }

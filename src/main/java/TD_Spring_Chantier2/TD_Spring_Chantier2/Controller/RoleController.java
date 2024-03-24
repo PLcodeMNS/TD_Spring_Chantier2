@@ -1,5 +1,7 @@
 package TD_Spring_Chantier2.TD_Spring_Chantier2.Controller;
 
+import TD_Spring_Chantier2.TD_Spring_Chantier2.DAO.ChantierDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.Path;
@@ -7,6 +9,8 @@ import java.nio.file.Path;
 @RestController
 public class RoleController {
 
+    @Autowired
+    protected ChantierDAO chantierDAO;
     @GetMapping("/Role")
     public String getRole() {
         return "Role";

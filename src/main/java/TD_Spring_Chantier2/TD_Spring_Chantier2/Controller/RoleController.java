@@ -1,9 +1,6 @@
 package TD_Spring_Chantier2.TD_Spring_Chantier2.Controller;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.Path;
 
@@ -25,6 +22,14 @@ public class RoleController {
         return "Le paramètre de cette URL est : " + monParametre;
     }
 
+    @PostMapping("/mon-role")
+    public String creerRole(@RequestParam int monParametre) {
+        return "Un role a été ajouté : " + monParametre;
+    }
+    @PutMapping("/mon-role/{monParametre}")
+    public String modifierRole(@PathVariable int monParametre) {
+        return "Le role a été modifié : " + monParametre;
+    }
     @DeleteMapping("/mon-role/{id}")
     public String supprimerRole (@PathVariable int id) {
         return "Supprime le produit avec l'id : " + id;
